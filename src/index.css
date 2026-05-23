@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #2563EB;
+  --color-primary-dark: #004ac6;
+  --color-text-main: #0F172A;
+  --color-glass:#f7f9fbb3;
+  --color-surface: #f7f9fb ;
+  --color-surface-container: #FFFFFF;
+  --color-accent-glow: #7DD3FC;
+
+  /* Typography */
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-hanken: 'Hanken Grotesk', sans-serif;
+}
+
+/* Apply global defaults */
+@layer base {
+  body {
+    @apply bg-surface text-text-main font-hanken;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space tracking-tight; /* tracking-tight applies the negative letter-spacing */
+  }
+}
