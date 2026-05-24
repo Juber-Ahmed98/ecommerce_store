@@ -6,9 +6,9 @@ function ProductCard({ name, price, image, description }) {
         <img src={image} alt={name} className="w-full h-full object-contain" />
       </div>
       {/* Text section */}
-      <div className="px-[18px] pt-4 pb-5 flex flex-col gap-1">
+      <div className="px-[18px] pt-4 pb-5 flex flex-col gap-1 flex-1">
         <h3 className="font-semibold text-[17px] text-[#0F172A]">{name}</h3>
-        <p className="text-[13px] text-[#475569] min-h-[36px] mb-2">
+        <p className="text-[13px] text-[#475569] min-h-[36px] mb-2 flex-1">
           {description}
         </p>
         <div className="flex items-center justify-between mt-1">
