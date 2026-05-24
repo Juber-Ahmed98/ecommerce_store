@@ -1,17 +1,32 @@
+import { useState, useEffect } from "react";
+import ProductCard from "../components/ProductCard";
+
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      const res = await fetch("http://localhost:3000/products/featured");
+      const data = await res.json();
+      setProducts(data);
+    }
+
+    fetchProducts();
+  }, []);
+
   return (
-    <div className="flex min-h-screen p-10 w-full">
-      <h1 className="text-3xl">Welcome to JBR LABS</h1>
-      <div className="featuredProducts">
-        <div className="productCards">
-          <div><img src="" alt="" /></div>
-          <div>
-            <h3></h3>
-            <p></p>
-            <p></p>
-            <button></button>
-          </div>
-        </div>
+    <div className="max-w-[1500px] mx-auto px-6 pt-12 pb-14">
+      <h1 className="font-semibold text-[32px] text-[#0F172A] tracking-tight mb-6">Featured Products</h1>
+      <div className="grid grid-cols-3 gap-6 px-12 py-8">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            name={product.name}
+            description={product.description}
+            price={product.price}
+            image={product.image}
+          />
+        ))}
       </div>
     </div>
   );
