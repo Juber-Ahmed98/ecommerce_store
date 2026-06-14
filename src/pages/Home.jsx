@@ -17,10 +17,11 @@ function Home() {
   return (
     <div className="max-w-[1500px] mx-auto px-6 pt-12 pb-14">
       <h1 className="font-semibold text-[32px] text-[#0F172A] tracking-tight mb-6">Featured Products</h1>
-      <div className="grid grid-cols-3 gap-6 px-12 py-8 max-[800px]:grid-cols-2 max-[500px]:grid-cols-1">
+      <div className="grid grid-cols-3 gap-6 p-8 max-[800px]:grid-cols-2 max-[500px]:grid-cols-1">
         {products.map((product) => (
           <ProductCard
             key={product.id}
+            id={product.id}
             name={product.name}
             description={product.description}
             price={product.price}
